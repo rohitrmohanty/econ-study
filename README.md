@@ -84,5 +84,5 @@ This program is inspired by examples from [QuantEcon's Julia by Example](https:/
 
 ## License
 
-See the [LICENSE.md](./LICENSE) file in the root directory of this repository for license information.# econ-study
+See the [LICENSE](./LICENSE) file in the root directory of this repository for license information.# econ-study
 My studies of economics through the julia programming language
