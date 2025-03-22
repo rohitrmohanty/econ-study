@@ -34,7 +34,12 @@ ep_mean = ep_sum / m
 #  return ep .^ 2
 #end
 
-generatedata(n) = rand(n) .^ 2
+# generatedata(n) = rand(n) .^ 2
+
+
+# We can broadcast a function
+f(x) = x^2
+generatedata(n) = f.(rand(n))
 
 @show data = generatedata(5)
 
