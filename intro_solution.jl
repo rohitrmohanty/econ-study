@@ -3,10 +3,13 @@
 using LaTeXStrings, Plots
 
 println("White Noise Plots Program")
+# Change the length 'n' and the function like x^3, 1/x etc
 n = 100
 f(x) = x^2
 
-x = randn(n)
+# Try Various Inputs using randn(n) etc
+x = rand(n)
+histogram(x, bins = 30, title = "Distribution of x", ylabel = "Frequency")
 
 # Plot x and x² against index (1:n); shows how values jump due to randomness
 plot(f.(x), label = L"x^2", title = "x and x² over index")
@@ -32,8 +35,15 @@ display(current())
 println("Press Enter for next plot....")
 readline()
 
-# Add Observational Noise independent of x to the deterministic output
+# Generate Observational Noise
 ϵ = 0.1 * randn(n)
+histogram(ϵ, bins = 30, title = "Distribution of Noise ϵ", ylabel="Frequency") 
+display(current())
+
+println("Press Enter for next plot....")
+readline()
+
+# Add Observational Noise independent of x to the deterministic output
 y_noisy = y_sorted + ϵ
 plot(x_sorted, y_noisy, label = L"x^2 + \epsilon", title = "Noisy observations of x²")
 display(current())
